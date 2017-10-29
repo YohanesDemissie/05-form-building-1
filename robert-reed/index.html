@@ -81,12 +81,12 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-    <script src="/scripts/blogArticles.js"></script>
-    <script src="/scripts/article.js"></script>
-    <script src="/scripts/articleView.js"></script>
+    <script src="scripts/blogArticles.js"></script>
+    <script src="scripts/article.js"></script>
+    <script src="scripts/articleView.js"></script>
     <script>
-    // COMMENT: What is this function doing? Why do we need it? Will we need one like it on the new article page that we are creating?
-    // PUT YOUR RESPONSE HERE
+    // COMMENTED: What is this function doing? Why do we need it? Will we need one like it on the new article page that we are creating?
+    // This is essentially the equivalent of the document.ready() function that we used before to initialize the page with content. However, since we now have two different pages that are calling methods from the same JS file, we have a different init method for each page, to ensure it gets the proper data. However, isn't it bad practice to inject js into the html like this? Couldn't the same be achieved by using a unique id on this page that isn't used on the other page, and then calling a single init function that looks for this id, and if found, calls the method? For example, give this main an id of main-index and then do a if( document.getElementById( 'main-index' ) ) { articleView.initIndexPage(); }. Seems like it would accomplish the same, but result in correct separation of concerns.
       articleView.initIndexPage()
     </script>
   </body>
