@@ -60,16 +60,9 @@ articleView.setTeasers = () => {
   $('.article-body *:nth-of-type(n+2)').hide();
   $('article').on('click', 'a.read-on', function(e) {
     e.preventDefault();
-    if ($(this).text() === 'Read on →') {
-      $(this).parent().find('*').fadeIn();
-      $(this).html('Show Less &larr;');
-    } else {
-      $('body').animate({
-        scrollTop: ($(this).parent().offset().top)
-      },200);
-      $(this).html('Read on &rarr;');
-      $(this).parent().find('.article-body *:nth-of-type(n+2)').hide();
-    }
+    // NOTE: Refactored 10 lines into 2. Woop!
+    $(this).parent().find('.article-body *:nth-of-type(n+2)').fadeToggle();
+    $(this).text() === 'Read on →' ? $(this).html('Show Less &larr;') : $(this).html('Read on &rarr;');
   });
 };
 

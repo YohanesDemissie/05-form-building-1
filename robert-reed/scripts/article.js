@@ -7,6 +7,7 @@ function Article (rawDataObj) {
   for( let key in rawDataObj ) {
     this[ key ] = rawDataObj[ key ];
   }
+  this.readOnText = [ 'Show Less &larr;', 'Read on &rarr;'];
 }
 
 Article.prototype.toHtml = function() {
