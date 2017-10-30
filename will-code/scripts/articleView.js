@@ -74,7 +74,7 @@ articleView.setTeasers = () => {
 };
 
 // COMMENT: Where is this function called? Why?
-// PUT YOUR RESPONSE HERE
+// This function is called as a script on the new.html page so the functions to populate the content of the JSON field are triggered as the page loads.
 articleView.initNewArticlePage = () => {
   // DONE: Ensure the main .tab-content area is revealed. We might add more tabs later or otherwise edit the tab navigation.
   $('.tab-content').show();
