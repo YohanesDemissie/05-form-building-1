@@ -15,8 +15,8 @@ Article.prototype.toHtml = function() {
   this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
   this.publishStatus = this.publishedOn ? `published ${this.daysAgo} days ago` : '(draft)';
 
-  // STRETCH: Pass the article body into the marked.js library to format our Markdown input
-  console.log(template(this));
+  // STRETCHED: Pass the article body into the marked.js library to format our Markdown input
+  // NOTE: I did this in the constructor, is that bad?
 
   return template(this);
 };

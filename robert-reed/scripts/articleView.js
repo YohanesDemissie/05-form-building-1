@@ -57,11 +57,11 @@ articleView.handleMainNav = () => {
 };
 
 articleView.setTeasers = () => {
-  $('.article-body *:nth-of-type(n+2)').hide();
+  $('.article-body').each( function() {$(this).children().first().nextAll().hide();});
   $('article').on('click', 'a.read-on', function(e) {
     e.preventDefault();
     // NOTE: Refactored 10 lines into 2. Woop!
-    $(this).parent().find('.article-body').find('*:nth-of-type(n+2)').fadeToggle();
+    $(this).parent().find('.article-body').each( function() {$(this).children().first().nextAll().fadeToggle();});
     $(this).text() === 'Read on →' ? $(this).html('Show Less &larr;') : $(this).html('Read on &rarr;');
   });
 };
