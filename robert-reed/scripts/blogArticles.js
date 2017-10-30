@@ -1,7 +1,7 @@
 'use strict';
 
-var rawData = [
-  {"author":"JB Tellez","authorUrl":"JBFTW.party","title":"Let's write an article together","category":"codez","body":"<p>I make codez. So do you.</p>\n<pre><code>function Article (rawDataObj) {\n  this.author = rawDataObj.author;\n  this.authorUrl = rawDataObj.authorUrl;\n  this.title = rawDataObj.title;\n  this.category = rawDataObj.category;\n  this.body = rawDataObj.body;\n  this.publishedOn = rawDataObj.publishedOn;\n}\n</code></pre>","publishedOn":"2017-10-27T22:57:02.858Z","daysAgo":0,"publishStatus":"published 0 days ago"},
+var rawData = [ //eslint-disable-line
+  {"author":"JB Tellez","authorUrl":"JBFTW.party","title":"Let's write an article together","category":"codez","body":"<p>I make codez. So do you.</p>\n<pre><code>function Article (rawDataObj) {\n  this.author = rawDataObj.author;\n  this.authorUrl = rawDataObj.authorUrl;\n  this.title = rawDataObj.title;\n  this.category = rawDataObj.category;\n  this.body = rawDataObj.body;\n  this.publishedOn = rawDataObj.publishedOn;\n}\n</code></pre>","publishedOn":"2017-10-27T22:57:02.858Z","daysAgo":0,"publishStatus":"published 0 days ago"}, //eslint-disable-line
   {
     title:       'Bacon Ipsum',
     category:    'food',
