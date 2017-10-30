@@ -61,8 +61,7 @@ articleView.setTeasers = () => {
   $('article').on('click', 'a.read-on', function(e) {
     e.preventDefault();
     // NOTE: Refactored 10 lines into 2. Woop!
-    $(this).parent().find('.article-body').filter('*:nth-of-type(n+2)').fadeToggle();
-    console.log($(this).parent());
+    $(this).parent().find('.article-body').find('*:nth-of-type(n+2)').fadeToggle();
     $(this).text() === 'Read on →' ? $(this).html('Show Less &larr;') : $(this).html('Read on &rarr;');
   });
 };
@@ -73,14 +72,16 @@ articleView.initNewArticlePage = () => {
   // DONE: Ensure the main .tab-content area is revealed. We might add more tabs later or otherwise edit the tab navigation.
   $( '.tab-content' ).show();
 
-  // TODO: The new articles we create will be copy/pasted into our source data file.
+  // DONE: The new articles we create will be copy/pasted into our source data file.
   // Set up this "export" functionality. We can hide it for now, and show it once we have data to export.
+  $( '#article-export' ).hide();
 
   $('#article-json').on('focus', function(){
     this.select();
   });
 
   // TODO: Add an event handler to update the preview and the export field if any inputs change.
+  $( '#new-form' ).on( 'change', 'input, textarea', () => articleView.create() );
 };
 
 articleView.create = () => {
@@ -94,7 +95,7 @@ articleView.create = () => {
     category: $( '#article-category' ).val(),
     author: $( '#article-author' ).val(),
     authorUrl: $( '#article-author-url' ).val(),
-    publishedOn: `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`,
+    publishedOn: $( '#article-publish' ).is( ':checked' ) ? `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate() + 1}` : null,
     body: $( '#article-body' ).val()
   } );
 

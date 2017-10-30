@@ -21,7 +21,7 @@
         <header>
           <h1>{{title}}</h1>
           <div class="byline">
-            By <address><a href="{{authorUrl}}">{{author}}</a></address>
+            By <address><a href="{{authorUrl}}" target="_blank">{{author}}</a></address>
             {{publishStatus}}
           </div>
         </header>
@@ -74,6 +74,10 @@
         <label>
          <input type="text" id="article-category" placeholder="Category" required>
         </label>
+        <label id="publish-checkbox">
+          <input type="checkbox" id="article-publish">
+          Published
+        </label>
         <button type="submit">Submit and return to the home page</button>
         </form>
 
@@ -86,7 +90,7 @@
       <section id="article-export">
         <!-- TODO: Refer to the preview image to see what we will be building here: we need a container of some kind to hold a JSON export of our article. Ideally this container would show only a incipit (short preview) of the JSON and also be clickable to allow easy selection of the text it holds. What kind of element could we use for this? -->
         <label>
-          <input type="text" name="JSON">
+          <input type="text" name="JSON" id="article-json" spellcheck="false">
           When finalized, copy the above JSON, and paste into blogArticles.js
         </label>
       </section>
