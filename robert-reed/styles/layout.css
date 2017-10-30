@@ -21,6 +21,11 @@
   margin: .2em 5%;
 }
 
+footer {
+  text-align: center;
+  padding: 30px 0;
+}
+
 @media only screen and (min-width: 640px) {
   .heading-group-h1 {
     padding: .1em .1em .1em 2em;

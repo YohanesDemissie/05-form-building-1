@@ -1,8 +1,6 @@
 'use strict';
 
 var rawData = [ //eslint-disable-line
-  {"title":"code test","category":"fun","author":"rob","authorUrl":"rob.eob.ebo","publishedOn":"2017-10-30","body":"<pre><code>let you = bs =&gt; poop;\n</code></pre><p>hi hi hi hi hi</p>\n<p>hey</p>\n<h4 id=\"hello\">hello</h4>\n","daysAgo":0,"publishStatus":"published 0 days ago"},
-  {"title":"This is a test article.","category":"Testeroni and Cheese","author":"Robert Reed","authorUrl":"http:www.google.com","publishedOn":"2017-10-30","body":"<h1 id=\"test-article-fashow\">Test article fashow</h1>\n<p>How am i doing? Do I show?</p>\n<p>I shouldn&#39;t show.</p>\n<ol>\n<li>I&#39;m a list</li>\n<li>yup, I&#39;m a two list</li>\n</ol>\n","daysAgo":0,"publishStatus":"published 0 days ago"},
   {"author":"JB Tellez","authorUrl":"JBFTW.party","title":"Let's write an article together","category":"codez","body":"<p>I make codez. So do you.</p>\n<pre><code>function Article (rawDataObj) {\n  this.author = rawDataObj.author;\n  this.authorUrl = rawDataObj.authorUrl;\n  this.title = rawDataObj.title;\n  this.category = rawDataObj.category;\n  this.body = rawDataObj.body;\n  this.publishedOn = rawDataObj.publishedOn;\n}\n</code></pre>","publishedOn":"2017-10-27T22:57:02.858Z","daysAgo":0,"publishStatus":"published 0 days ago"}, //eslint-disable-line
   {
     title:       'Bacon Ipsum',
