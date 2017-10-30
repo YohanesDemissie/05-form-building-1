@@ -122,4 +122,5 @@ articleView.initIndexPage = () => {
   articleView.handleAuthorFilter();
   articleView.handleMainNav();
   articleView.setTeasers();
+  hljs.initHighlightingOnLoad();
 };
