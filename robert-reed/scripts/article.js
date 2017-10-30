@@ -3,11 +3,9 @@
 let articles = [];
 
 function Article (rawDataObj) {
-  // NOTE: for let in FTW!
   for( let key in rawDataObj ) {
     this[ key ] = rawDataObj[ key ];
   }
-  this.readOnText = [ 'Show Less &larr;', 'Read on &rarr;'];
 }
 
 Article.prototype.toHtml = function() {
@@ -18,7 +16,7 @@ Article.prototype.toHtml = function() {
   this.publishStatus = this.publishedOn ? `published ${this.daysAgo} days ago` : '(draft)';
 
   // STRETCH: Pass the article body into the marked.js library to format our Markdown input
-  // console.log(template(this));
+  console.log(template(this));
 
   return template(this);
 };

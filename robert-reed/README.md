@@ -22,6 +22,8 @@ Users can preview their articles before publishing them, and chose to publish or
 - Fixed broken script paths
 - Refactored `Article` constructor to loop instantiate object
 - Refactored `setTeasers()` method to show/hide in 2 lines instead of 10
+- Added article publishing capabilities
+- Added article export functionality
 
 ## Credits and Collaborations
 Created by Robert Reed, based off of source code from the Code Fellows 301 lab repo. We used the clearfix CSS convention from CSS Tricks: https://css-tricks.com/snippets/css/clear-fix/, the normalize.css from http://github.com/necolas/normalize.css, the jQuery v3.2.1 library, and the handlebars.js library from https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js.
