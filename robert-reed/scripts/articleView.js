@@ -50,7 +50,7 @@ articleView.handleCategoryFilter = () => {
 articleView.handleMainNav = () => {
   $('.main-nav').on('click', '.tab', function() {
     $('.tab-content').hide();
-    $('#' + $(this).data('content')).fadeIn();
+    $(`#${$(this).data('content')}`).fadeIn();
   });
 
   $('.main-nav .tab:first').click();
@@ -60,7 +60,7 @@ articleView.setTeasers = () => {
   $('.article-body').each( function() {$(this).children().first().nextAll().hide();});
   $('article').on('click', 'a.read-on', function(e) {
     e.preventDefault();
-    // NOTE: Refactored 10 lines into 2. Woop!
+    // QUESTION: Refactored 10 lines into 2. Woop! (That wasn't a question, I tricked you.)
     $(this).parent().find('.article-body').each( function() {$(this).children().first().nextAll().fadeToggle();});
     $(this).text() === 'Read on →' ? $(this).html('Show Less &larr;') : $(this).html('Read on &rarr;');
   });
@@ -70,7 +70,8 @@ articleView.setTeasers = () => {
 // This function is called at the bottom of new.html and is used to setup the default view of the page. This same js file is also referenced in index.html, so this approach allows us to pick and choose what gets run on each pageload.
 articleView.initNewArticlePage = () => {
   // DONE: Ensure the main .tab-content area is revealed. We might add more tabs later or otherwise edit the tab navigation.
-  $( '.tab-content' ).show();
+  // $( '.tab-content' ).show();
+  articleView.handleMainNav();
 
   // DONE: The new articles we create will be copy/pasted into our source data file.
   // Set up this "export" functionality. We can hide it for now, and show it once we have data to export.
@@ -103,15 +104,16 @@ articleView.create = () => {
   $('#articles').append(newArticle.toHtml());
   articleView.setTeasers();
 
-  // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
-  // $('pre code').each();
+  // DONE: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
+  $('pre code').each( function() {
+    hljs.highlightBlock(this);
+  });
 
   // DONE: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
   $( '#article-export' ).show().find( 'input' ).val( JSON.stringify( newArticle ) );
-
 };
 
-// COMMENT: Where is this function called? Why?
+// DONE: Where is this function called? Why?
 // This function is called at the bottom of index.html and is used to setup the default view of the page. This same js file is also referenced in new.html, so this approach allows us to pick and choose what gets run on each pageload.
 articleView.initIndexPage = () => {
   articles.forEach(article => $('#articles').append(article.toHtml())); // eslint-disable-line
