@@ -98,7 +98,7 @@ articleView.create = () => {
   $('#articles').empty();
 
   // DONE: Instantiate an article based on what's in the form fields:
-  newArticle = new Article({
+  article = new Article({ //previously called newArticle
     title: $('#article-title').val(),
     author: $('#article-author').val(),
     authorUrl: $('#article-author-url').val(),
@@ -123,7 +123,9 @@ articleView.create = () => {
 // COMMENTED: Where is this function called? Why?
 // This function is called as part of the document preparation when index.html loads.  The link is in a script tag in the footer.
 articleView.initIndexPage = () => {
-  articles.forEach(article) => $('#articles').append(article.toHtml()));
+  article.forEach(article) => {
+    $('#articles').append(article.toHtml())
+  });
   articleView.populateFilters();
   articleView.handleCategoryFilter();
   articleView.handleAuthorFilter();

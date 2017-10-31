@@ -20,7 +20,7 @@ Article.prototype.toHtml = function() {
 
   // STRETCH: Pass the article body into the marked.js library to format our Markdown input
   // console.log(template(this));
-
+  this.body = marked(this.body); //related to stretch goal
   return template(this);
 };
 
